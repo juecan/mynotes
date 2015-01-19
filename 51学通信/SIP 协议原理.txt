@@ -1,0 +1,16 @@
+## SIP 协议原理
+
+### 实践篇
+
+#### 基本 SIP 实验平台的搭建
+
+	SIP协议原理实践篇之基本SIP实验平台的搭建.pdf
+	
+#### 基本 SIP 注册过程
+
+	sip phone -> sip server
+	wireshark 抓包，SIP 过滤
+	
+#### 基本 SIP 语音呼叫实验
+
+	sip phone -> sip server -> sip phone
