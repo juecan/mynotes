@@ -1,0 +1,9 @@
+GPRS：通用分组无线业务
+
+通用分组无线业务（General Packet Radio Service，GPRS）
+
+通用分组无线业务（General Packet Radio Service，GPRS)是一种GSM的增强技术，是为分组无线通信而设计的。
+
+与GSM—样，GRPS采用GMSK调制，但是GPRS通过采用快速编码方案来提高用户的数据传输速率（理论上单时隙最大比特速率为20Kbit/s)。
+
+由于GPRS可以在几个终端间共享一组无线信道，因此更加适合分组数据传输，具有更高的效率。

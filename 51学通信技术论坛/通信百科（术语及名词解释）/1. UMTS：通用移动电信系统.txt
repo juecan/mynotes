@@ -1,0 +1,19 @@
+UMTS：通用移动电信系统
+
+UMTS(Universal Mobile Telecommunication System，UMTS)：通用移动电信系统
+
+通用移动电信系统（UMTS)是第3代伙伴计划（3rd Generation Partnership Project，3GPP)提出的标准，于2001年在日本开始商用，其名称为自由移动多媒体接入（FDMA)，并于2003年在其他国家商用。
+
+UMTS支持两种不同的模式：
+	FDD模式，在世界范围内得到了广泛的应用；
+	TDD模式，主要用于中国市场。
+
+UMTS是基于码分多址（Code Division Multiple Access，CDMA）的方案，使用高速编码的直接扩频序列。
+在第一种形式，UMTS/FDD的优点包括：可以提高数据传输速率（每个用户在单信道的数据传输速率可达384kbh/s)，同时支持基于分组和电路的应用并且改进了漫游能力。
+UMTS规范中，在专用信道上的理论最大数据传输速率为2Mbit/s，但是在商用网络中往往达不到这样的数据传输速率。
+UMTS是GSM系统的3G版本。虽然UMTS的无线接口与GSM/EDGE完全不同，但是UMTS在结构上的许多概念和处理过程是从GSM继承而来。
+
+从实际应用情况来看，UMTS和GSM的关系可以描述为如下几点：
+1) UMTS SIM卡与GSM后向兼容，意味着UMTSSIM卡可以插入到GSM设备中使用。这种后向兼容的好处是使用UMTSSIM卡的用户可以在GSM覆盖范围内得到服务。
+2) UMTS的MAP协议是GSM的MAP协议的升级版本，在终端和网络间可以同时使用分组和电路会话协议。虽然在3G中定义了新的组成部分和处理过程，但是它们在概念和原理上非常相似。
+3) 3GPP标准中定义了支持分组和电路应用的网络和用户终端规范，使得终端能够在GSM和UMTS网络间无缝移动。

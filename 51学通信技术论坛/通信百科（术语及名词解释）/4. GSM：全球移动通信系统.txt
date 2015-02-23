@@ -1,0 +1,9 @@
+GSM：全球移动通信系统
+
+全球移动通信(Global System for Mobile communications，GSM)系统
+
+全球移动通信（GSM）系统在1991年开始商用。
+
+该技术使用时分多址接人/频分多址接人（Time Division Multiple Access/Frequency Division Multiple Access，TDMA/FDMA)无线方案和高斯最小频移键控（Gaussian Minimum Shift Keying，GMSK)无线调制模式。
+
+GSM最初仅提供9.6Kbit/s的语音业务、短消息业务（Short Message Service，SMS)和低速率电路交换数据业务。

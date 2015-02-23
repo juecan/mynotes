@@ -1,0 +1,11 @@
+HSPA+：HSPA的演进
+
+HSPA+：HSPA的演进
+
+HSPA+也称HSPA演进，是HSDPA和HSUPA技术的增强，目标是在演进UMTS技术成熟之前，提供一种3G后向兼容的演进技术。
+
+由于采用了大量新技术，例如，多输入多输出（Multiple Input Multiple Output，MIMO)技术和高阶调制（例如下行采用64QAM，上行采用16QAM)，HSPA+有望在WCDMA系统的5MHz带宽上达到与演进UMTS相同的效率。
+
+同时，HSPA+结构上也做了改进，降低了数据发送时延。
+
+HSPA+被认为是当前HSPA和演进UMTS间的过渡技术，与3G网络后向兼容，便于运营商平滑升级网络，在演进UMTS网络进入实际商用前提高网络性能。
