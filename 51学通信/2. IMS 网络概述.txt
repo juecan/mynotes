@@ -1,0 +1,140 @@
+## IMS 网络概述
+
+	1. IMS网络概述(一)IMS的产生背景和IMS是什么？
+	2. IMS网络P-CSCF的发现过程
+
+### IMS 的产生背景以及 IMS 是什么？
+
+#### 通信网络的转变
+
+	按业务域分：运营商的网络构成（语音业务（CS，Circuit Switch）、数据业务（PS，Packet Switch））
+		业务：网元 -> 网络
+		固网语音业务：PSTN 交换机 -> PSTN 网络
+		移动传统语音业务：MSC-S、媒体网关、GMSC、智能网、短信中心 -> GSM 网络、3G 网络（WCDMA、TDSCDMA）
+		本身并不提供语音业务，仅提供数据业务（VoIP、VoLTE）：MME、SGW、PGW -> 4G LET 网络
+		微信、Skype、微博等互联网服务：骨干路由器、汇聚路由器、接入路由器、防火墙 -> 数据网络（固网）
+
+#### 问题
+
+		垂直建设的网络（都是语音业务，要重复部署多套）
+		封闭的网络（开发一个群聊功能要半年？）
+		业务重叠的网络
+		难以维护的网络（2000 台 MSC-S、1000 台媒体网关要做补丁升级修复 BUG）
+		维护成本高的网络（都是语音业务，要养几套不同的维护人员）
+		
+#### IMS是什么？
+
+	IMS：IP Multimedia Subsystem，IP 多媒体子系统
+	
+	IP
+		基于 IP 的传输
+		基于 IP 的会话控制
+		基于 IP 的业务实现
+	Multimedia	
+		语音、视频、图片、文本等多种媒体的组合
+		支持多种接入方式，各种不同能力终端
+	Subsystem
+		依赖于现有网络技术和设备，最大程度重用现有网络系统
+		无线网络把 PS/GPRS 网络作为承载网络
+		固定网络把基于固定接入 IP 系统作为承载网络
+		
+	与接入无关
+	         |---> Fixed -> PSTN/固网(xDSL)/有线网络(Cable)/WLAN
+	IMS ---> |
+	         |---> Mobile -> WLAN/WiMAX/GSM/3G/2.5G(UMTS)/4G(LET)
+
+	由 3GPP 在 R5 阶段（2005年）引入，叠加在 PS 域上，目的是在基于全 IP 的网络上为移动用户提供多媒体业务
+	
+#### 为什么会出现 IMS？
+
+	全IP化的发展，加速了电信和互联网的融合
+		端到端的全 IP 化是网络发展趋势（4G 的 LTE 本身就是一张全 IP 的网络），封闭的网络（例如SS7七号网络）必将退出历史舞台
+		电信和互联网结合催生众多新业务：即时通信、呈现业务、WEB800，多媒体会议等
+			别指望在MSC-S上打个补丁就能支持群聊、打飞机、摇一摇、扫一扫
+		互联网促使电信商业模式发生深刻改变：微信对短消息业务的冲击，合作还是封闭还是直接竞争？
+		电信与互联网企业紧密合作拓展产业链：中国联通与腾讯的合作
+	
+	电信和互联网在融合的同时也面临竞争：
+		VoIP蚕食传统话音业务
+		互联网应用的发展引发的流量，对电信网络造成巨大冲击
+	
+	在融合与博弈中向前发展，IMS是共赢的需要
+	
+	Find and connect ---> IP based server applications presence, messaging, PoC... ---> IMS finds the other terminal and connects the terminals with IP
+	Mobile Phone/PC <---> SIP <---> IMS <---> SIP <---> Mobile Phone/PC
+	Any IP connection(e.g. CDMA, GPRS, EDGE, WCDMA, LTE, WLAN, WiMAX, ADSL) <---> User plane connection <---> IP based Services possible between terminals
+	IP based server applications presence, messaging, PoC... <===> IMS <===> Packet switched network <===> User plane connection
+
+#### IMS 对运营商的好处
+
+	网络更简单、便宜（低CAPEX和OPEX），原因：多种业务可共享同一个核心网
+	可快速灵活的部署业务，并便于细分市场，原因：在同一个核心网上很容易部署并组合业务
+	开放的网络架构，容易选择第三方部件来丰富运营商的业务
+	IMS提供运营商的竞争能力
+
+#### IMS 对用户的好处
+
+	有互通的保障（互联网业务之间无法互通）
+	有安全的保障（避免主叫号码欺骗的问题）
+	全IP，便宜
+	有业务质量的保障（运营商来掌管QoS）
+	单一号码、账户，使用方便
+	多种接入方式（各种接入技术之间的无缝切换）
+	更好的业务体验（一致的业务体验）
+
+#### IMS 网络的基本结构
+
+	应用层
+		WEB门户
+		应用服务器
+	会话控制层
+		会话控制（CSCF，Call Session Control Function 呼叫会话控制功能） - 集中数据库（HSS，Home Subscriber Server 归属用户服务器）
+		会话控制 - 接入网络
+	终端
+		接入网络
+			PC
+			IP phone
+			Cellphone
+			媒体控制与网关 - 其他网络（如PSTN、CS）
+			媒体服务器
+	
+	IMS 是：
+		归属地控制的业务架构
+		VoIP电话与多媒体服务架构
+		由3GPP和3GPP2开放标准定义
+		基于IETF的协议（SIP、Diameter、RTP）
+		适用于有限与无线接入网络
+		可提供业务的透明传送和切换
+		可以和PSTN以及传统电话域实现互通
+
+#### 什么是全IP网络
+
+	从技术角度看，全IP网络是指该网络中跑的所有流量（包括信令和Payload）都遵循TCP/IP四层模型，协议栈是通用的
+	IP可以Over任何一种传送介质（以太网、帧中继、光纤、POS）
+	IP可以Over任何一种接入网络（固网、2/3G、WLAN、LTE）
+
+### IMS 信令详解 - P-CSCF 的发现
+
+	P-CSCF 是接入 IMS 网络的第一个网元，也是一个单一的入口点
+	UE需要知道P-CSCF的位置和寻址信息，从而通过P-CSCF访问IMS网络
+	P-CSCF的地址不是配置在UE终端里的，因此有一个发现的过程
+	
+	Cellphone ---> P-CSCF在哪里？我要打电话 ---> 2/3/4G ---> IMS网络（P-CSCF ---> 应用服务器）
+
+#### P-CSCF 的发现方式一：通过DHCP/DNS获取
+
+	Cellphone ---> 2/3/4G接入网络（PS） ---> GGSN/PGW ---> DHCP服务器（PDN网络） ---> DNS服务器（PDN网络）
+	
+	Cellphone -> 1. UE发起PDP上下文激活流程（EPC为EPS承载建立流程）-> GGSN/PGW
+	Cellphone <- 2. PDP上下文激活接受（或EPS承载建立接受）（UE IP等）<- GGSN/PGW
+	Cellphone -> 3. DHCP请求 -> DHCP服务器
+	Cellphone <- 4. DHCP响应（P-CSCF地址或P-CSCF FQDN主机名，DNS服务器地址）<- DHCP服务器
+	Cellphone -> 5. DNS请求 -> DNS服务器
+	Cellphone <- 6. DNS响应（P-CSCF地址） <- DNS服务器
+
+#### P-CSCF 的发现方式二：通过GGSN/PGW下发
+
+	Cellphone ---> 2/3/4G接入网络（PS） ---> GGSN/PGW（静态配置P-CSCF的IP）
+	
+	Cellphone -> 1. UE发起PDP上下文激活流程（EPC为EPS承载建立流程）-> GGSN/PGW
+	Cellphone <- 2. PDP上下文激活接受（或EPS承载建立接受）（UE IP、P-CSCF地址）<- GGSN/PGW
